@@ -1,4 +1,4 @@
-# https://github.com/milesial/Pytorch-UNet/blob/master/unet/unet_parts.py
+# Credit to https://github.com/milesial/Pytorch-UNet/blob/master/unet/unet_parts.py for this code
 
 """ Parts of the U-Net model """
 

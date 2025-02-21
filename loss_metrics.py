@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import pdb
 import numpy as np
 
-# https://arxiv.org/pdf/2305.18890
+# ChatGPT helped make these functions
 
 
 """
