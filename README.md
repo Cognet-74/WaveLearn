@@ -1,5 +1,14 @@
 # Traveling_Waves_Integrate
 
+
+## Polygons NWM Waves
+<table>
+  <tr>
+    <td><img src="gifs/polygons1.gif" alt="Description 1" width="200"/></td>
+    <td><img src="gifs/polygons2.gif" alt="Description 2" width="200"/></td>
+  </tr>
+</table>
+
 ## Multi-MNIST NWM Waves
 <table>
   <tr>
@@ -67,4 +76,5 @@
 7. Process the MNIST and Tetrominoes scores using process_scores_df.ipynb and process_scores_df_min_max.ipynb
 8. Process Multi-MNIST scores using process_scores_df_multi-mnist.ipynb
 9. Produce the LSTM and NWM figure (Figure 5) using produce_fig_lstm_nwm.ipynb
-10. Produce polygons results using multi_polygon_classification_iclr.ipynb
+10. Produce the square area theory results using Square_Area_Theory.ipynb
+11. Produce the multi polygon results using Multi_Polygon_Classification.ipynb
