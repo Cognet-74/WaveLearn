@@ -1,0 +1,1 @@
+{"hidden_state_reset":1,"_timestamp":1.7422514627988734e+09,"val_loss":6.378655118942261,"learning_rate":0.0009801,"val_directional_accuracy":0.5085714285714286,"_wandb":{"runtime":545},"_step":1480,"train_loss":0.9288795590400696,"_runtime":545.1041}

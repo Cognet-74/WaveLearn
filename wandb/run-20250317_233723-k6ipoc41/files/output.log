@@ -1,0 +1,2 @@
+Generated synthetic data with shape: (2000, 5)
+Online Training: 100%|████████████████████████████████████████| 1500/1500 [06:56<00:00,  3.61it/s, train_loss=0.928880]

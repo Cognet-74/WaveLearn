@@ -1,0 +1,42 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.0",
+  "startedAt":  "2025-03-17T22:37:23.149795Z",
+  "program":  "C:\\Users\\larss\\Documents\\WaveLearn\\streaming_financial_example.py",
+  "codePath":  "streaming_financial_example.py",
+  "git":  {
+    "remote":  "https://github.com/Cognet-74/WaveLearn.git",
+    "commit":  "87d5ebf2235852acfecf5d3f65d67a004c976780"
+  },
+  "email":  "lars.soderblom.englund@gmail.com",
+  "root":  "C:\\Users\\larss\\Documents\\WaveLearn",
+  "host":  "Cogmac",
+  "executable":  "C:\\Users\\larss\\miniconda3\\envs\\omni\\python.exe",
+  "codePathLocal":  "streaming_financial_example.py",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "gpu":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "406047420416",
+      "used":  "229945683968"
+    }
+  },
+  "memory":  {
+    "total":  "17002713088"
+  },
+  "cpu":  {
+    "count":  4,
+    "countLogical":  8
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  3840,
+      "architecture":  "Ampere"
+    }
+  ],
+  "cudaVersion":  "12.6"
+}
