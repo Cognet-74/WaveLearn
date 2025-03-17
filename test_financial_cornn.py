@@ -80,10 +80,10 @@ def test_persistent_state():
     x2 = torch.randn(batch_size, c_in, seq_length)
     
     # First forward pass to get initial state
-    predictions1, _, hidden_state = model.forecaster(x1, hidden_state=None)
+    predictions1, _, hidden_state = model.forward(x1, hidden_state=None, return_hidden_state=True)
     
     # Second forward pass with persistent state
-    predictions2, _, new_hidden_state = model.forecaster(x2, hidden_state=hidden_state)
+    predictions2, _, new_hidden_state = model.forward(x2, hidden_state=hidden_state, return_hidden_state=True)
     
     # Verify that hidden states are different
     hy1, hz1 = hidden_state
@@ -160,7 +160,7 @@ def test_with_synthetic_data():
         y_batch = y_train[batch_indices, 0, 0].unsqueeze(1)  # First feature (price)
         
         # Forward pass
-        predictions, _, _ = model(X_batch)
+        predictions, _ = model(X_batch)
         loss = criterion(predictions, y_batch)
         
         # Backward pass
@@ -173,7 +173,7 @@ def test_with_synthetic_data():
     
     # Test prediction
     with torch.no_grad():
-        test_predictions, _, _ = model(X_test[:5])
+        test_predictions, _ = model(X_test[:5])
     
     print("\nTest predictions vs actual:")
     for i in range(5):

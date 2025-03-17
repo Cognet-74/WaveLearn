@@ -45,20 +45,28 @@ class FinancialModel(nn.Module):
             persistent_state=True  # Enable persistent state for online learning
         )
         
-    def forward(self, x, hidden_state=None):
+    def forward(self, x, hidden_state=None, return_hidden_state=False):
         """
         Forward pass with optional persistent hidden state
         
         Args:
             x: Input tensor of shape (batch_size, features, time_steps)
             hidden_state: Optional tuple of previous (hy, hz) states for online learning
+            return_hidden_state: Whether to return the updated hidden state
             
         Returns:
             output: Model predictions
             y_seq: Sequence of hidden states
-            new_hidden_state: Updated hidden state for next prediction
+            new_hidden_state: Updated hidden state for next prediction (only if return_hidden_state=True)
         """
-        return self.forecaster(x, hidden_state=hidden_state)
+        result = self.forecaster(x, hidden_state=hidden_state)
+        
+        # If return_hidden_state is True, return all three values
+        # Otherwise, only return the first two (predictions and hidden states sequence)
+        if return_hidden_state:
+            return result
+        else:
+            return result[0], result[1]
 
 
 class CoRNN1DModel(nn.Module):
@@ -396,9 +404,9 @@ def online_prediction(model, data_stream, window_size, step_size=1):
         
         with torch.no_grad():
             if hidden_state is not None:
-                output, _, hidden_state = model(window, hidden_state=hidden_state)
+                output, _, hidden_state = model(window, hidden_state=hidden_state, return_hidden_state=True)
             else:
-                output, _, hidden_state = model(window)
+                output, _, hidden_state = model(window, return_hidden_state=True)
             
         predictions.append(output.squeeze(0))
     
